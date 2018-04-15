@@ -1,0 +1,14 @@
+.signup {
+    margin-top: 50px;
+}
+.signup .signup-form {
+    max-width: 70%;
+    margin: auto;
+}
+.signup-form input {
+    margin-bottom: 10px;
+}
+.signin form   {
+    max-width: 70% !important;
+    margin: 20px  auto !important;
+}
