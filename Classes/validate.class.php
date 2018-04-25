@@ -2,7 +2,8 @@
 class Validate extends Database {
     private static  $id ;
     public function checkIfUserExist($email , $password){
-        $sql = "SELECT username , id FROM users WHERE email = :email AND password = :password";
+
+        $sql = "SELECT username , id FROM users WHERE email = :email AND password = :password AND users.groupid = 0";
         $query = $this->connectToDatabase()->prepare($sql);
 
         $query->execute(array(

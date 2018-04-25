@@ -40,16 +40,15 @@
 
                 <li class=><a href="index.php">Home</a></li>
                 <li><a href="contact.php"> Contact us </a></li>
-                <li><a href="signin.php"> Sell </a></li>
-                <li><a href="signup.php"> Buy </a></li>
+                <li><a href="pages.php?action=sell"> Sell </a></li>
+                <li><a href="pages.php?action=buy"> Buy </a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Edit Profile</a></li>
-                        <li><a href="#">Signout</a></li>
+                        <li><a href="pages.php?action=editprofile">Edit Profile</a></li>
+                        <li><a href="signout.php">Signout</a></li>
                     </ul>
                 </li>
-
 
             </ul>
         </div><!-- /.navbar-collapse -->

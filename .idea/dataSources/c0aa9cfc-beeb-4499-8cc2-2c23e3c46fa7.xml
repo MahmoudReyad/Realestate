@@ -16,125 +16,200 @@
       <Visible>1</Visible>
     </schema>
     <schema id="10" parent="1" name="wordpress"/>
-    <table id="11" parent="2" name="users"/>
-    <table id="12" parent="9" name="users"/>
-    <column id="13" parent="11" name="firstname">
+    <table id="11" parent="2" name="card"/>
+    <table id="12" parent="2" name="property"/>
+    <table id="13" parent="2" name="users"/>
+    <table id="14" parent="9" name="users"/>
+    <column id="15" parent="11" name="type">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="number">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="11" name="holdername">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="cvn">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="11" name="ownerid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="12" name="adresses">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="describtion">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="12" name="sellerid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="12" name="availability">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="12" name="statue">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="12" name="buyerid">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="27" parent="12" name="image_path">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="28" parent="12" name="price">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="29" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="13" name="firstname">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="11" name="lastname">
+    <column id="31" parent="13" name="lastname">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="11" name="email">
+    <column id="32" parent="13" name="email">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="11" name="username">
+    <column id="33" parent="13" name="username">
       <Position>4</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="11" name="password">
+    <column id="34" parent="13" name="password">
       <Position>5</Position>
       <DataType>varchar(254)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="11" name="id">
+    <column id="35" parent="13" name="id">
       <Position>6</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="11" name="dob">
+    <column id="36" parent="13" name="dob">
       <Position>7</Position>
-      <DataType>date|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="11" name="phone">
+    <column id="37" parent="13" name="phone">
       <Position>8</Position>
       <DataType>varchar(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="11" name="address">
+    <column id="38" parent="13" name="address">
       <Position>9</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="11" name="age">
+    <column id="39" parent="13" name="age">
       <Position>10</Position>
       <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="11" name="country">
+    <column id="40" parent="13" name="country">
       <Position>11</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="11" name="zipcode">
+    <column id="41" parent="13" name="zipcode">
       <Position>12</Position>
       <DataType>int(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="11" name="groupid">
+    <column id="42" parent="13" name="groupid">
       <Position>13</Position>
       <DataType>int(25)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="26" parent="11" name="PRIMARY">
+    <key id="43" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="27" parent="12" name="userid">
+    <column id="44" parent="14" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="12" name="username">
+    <column id="45" parent="14" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="12" name="password">
+    <column id="46" parent="14" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="12" name="email">
+    <column id="47" parent="14" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="12" name="fullname">
+    <column id="48" parent="14" name="fullname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="12" name="groupid">
+    <column id="49" parent="14" name="groupid">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="33" parent="12" name="truststatus">
+    <column id="50" parent="14" name="truststatus">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="34" parent="12" name="regstatus">
+    <column id="51" parent="14" name="regstatus">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="35" parent="12" name="PRIMARY">
+    <key id="52" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>

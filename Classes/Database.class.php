@@ -9,11 +9,9 @@ class  Database{
     {
         try{
            self::$conn = new PDO($this->dsn , $this->dbUserName , $this->dbPassword);
-           echo 'connected';
            return self::$conn;
         }catch (PDOException $e){
             die($e->getMessage());
-            echo 'not connected';
         }
     }
     public function selectUser($selector = '*'){
@@ -57,6 +55,103 @@ class  Database{
 
             self::$connected = false;
 
+        }
+    }
+    public function InsertProperty(property $property){
+        $sql = 'INSERT INTO property(adresses, describtion, sellerid, availability, statue , image_path , price) VALUES (? , ? , ? , ? , ? , ? ,?) ';
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute(array($property->address , $property->description , $property->sellerId , $property->avilabilty , $property->statue , $property->imagePath , $property->price ));
+        $count = $query->rowCount();
+        if ($count > 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public function selectAllProperty($id){
+        $sql = "SELECT * FROM property WHERE  sellerid != '$id' AND  availability = 0";
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute();
+        $fetch = $query->fetchAll();
+        $count = $query->rowCount();
+        if($count > 0 ){
+
+            return $fetch;
+        }
+        else{
+            echo 'this is error';
+            return false;
+
+        }
+
+    }
+    public function selectProperty($id){
+
+        $sql = "SELECT * FROM property WHERE  id = '$id'";
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute();
+        $fetch = $query->fetchAll();
+        $count = $query->rowCount();
+        if($count > 0 ){
+
+            return $fetch;
+        }
+        else{
+            echo 'this is error';
+            return false;
+
+        }
+    }
+    public function addCardInformation(Card $card)
+    {
+        $sql = "INSERT INTO card VALUES (? , ? , ? ,? , ?)";
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute(array($card->type , $card->number , $card->holderName ,$card->cvn , $card->ownerId ));
+        $count = $query->rowCount();
+        if($count > 0){
+            return true;
+        }else {
+            echo "ErorInsert";
+
+            return false;
+        }
+
+    }
+    public function updatePropertystate($proid , $userid){
+        $sql = "UPDATE  property SET buyerid = $userid , availability = 1 WHERE id = $proid";
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute();
+        $count = $query->rowCount();
+        if ($count >0) {
+            return true;
+        }else {
+            echo "ErorUpdate";
+            return false;
+        }
+    }
+    public function selectSpecUser($id){
+        $sql = "SELECT * FROM users WHERE  users.id = $id" ;
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute();
+        $fetch = $query->fetchAll();
+        $count= $query->rowCount();
+        if($count > 0){
+            return $fetch;
+        }
+        else {
+            return false;
+        }
+
+    }
+    public function deleteUser($id){
+        $sql = "DELETE FROM users WHERE id = $id";
+        $query = $this->connectToDatabase()->prepare($sql);
+        $query->execute();
+        $count = $query->rowCount();
+        if($count > 0 ){
+            return true;
+        }else{
+            return false;
         }
     }
 

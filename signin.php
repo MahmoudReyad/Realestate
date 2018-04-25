@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             session_start();
             $_SESSION['id'] = $valid->getId();
 
-            header('Location:signed.php');
+            header('Location:pages.php?action=mainpage');
         }
         else {
             header('Location:?faild');
